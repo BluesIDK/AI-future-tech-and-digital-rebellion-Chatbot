@@ -9,17 +9,25 @@ from sklearn.metrics.pairwise import cosine_similarity
 import warnings
 warnings.filterwarnings("ignore")
 
+# 🔄 Force re-download of punkt to avoid corrupted files
+nltk.download('punkt', force=True)
+nltk.download('stopwords', force=True)
+
 # Download necessary NLTK data
-nltk.download('punkt')
-nltk.download('stopwords')
+try:
+    nltk.data.find('tokenizers/punkt')
+except nltk.downloader.DownloadError:
+    nltk.download('punkt')
+try:
+    nltk.data.find('corpora/stopwords')
+except nltk.downloader.DownloadError:
+    nltk.download('stopwords')
 
 from nltk.corpus import stopwords
-from nltk.tokenize import sent_tokenize  # ← This is what you actually need
+from nltk.tokenize import sent_tokenize
 
+    
 st.cache_resource.clear()
- 
-# Removed this broken line:
-# sentences = tokenizer.tokenize(text)
 
 # 🧹 Clean and load books
 def load_and_clean_books(file_list):
