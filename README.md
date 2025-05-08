@@ -1,4 +1,5 @@
 # 🧠 Rebellion Dictionary 🔥
+https://dictionarysearch-gdnanxaxgcip5mxnpvgjbb.streamlit.app/
 
 Welcome to **Rebellion Dictionary**, an interactive, beautifully styled Streamlit web app that scrapes and displays real-time dictionary data — empowering users with definitions, word types, and related words in both a visual and accessible way. It's not just a dictionary. It's a *vibe*.
 
